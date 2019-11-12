@@ -1,0 +1,7 @@
+The total loss is paid in total  :-)  by us (=company) and client. These are called costs.
+So if we sum both graphs (see jpg) the result is linear function y=x, where:
+y=costs
+x=total loss
+
+Option is defined as [peril X location]. You can see it as point in 2D matrix of possisble options. Maybe some other termin would be better, combination, ... ??
+Region = Location.
