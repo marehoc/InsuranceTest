@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using RenRe.Puzzles.DealLosses.DbLayer;
+using RenRe.Puzzles.DealLosses.Entities;
 using RenRe.Puzzles.DealLosses.Logic;
+using RenRe.Puzzles.DealLosses.DbLayer;
 
 namespace RenRe.Puzzles.DealLosses
 {

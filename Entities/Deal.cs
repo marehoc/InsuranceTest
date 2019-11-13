@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace RenRe.Puzzles.DealLosses.DbLayer
+namespace RenRe.Puzzles.DealLosses.Entities
 {
     public class Deal
     {

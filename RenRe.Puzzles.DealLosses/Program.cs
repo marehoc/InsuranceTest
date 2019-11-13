@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using RenRe.Puzzles.DealLosses.DbLayer;
+using RenRe.Puzzles.DealLosses.Entities;
 
 namespace RenRe.Puzzles.DealLosses
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RenRe.Puzzles.DealLosses.DbLayer
+namespace RenRe.Puzzles.DealLosses.Entities
 {
 
 public enum enPeril

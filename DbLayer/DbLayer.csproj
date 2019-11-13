@@ -5,4 +5,8 @@
     <RootNamespace>RenRe.Puzzles.DealLosses.DbLayer</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
 </Project>
