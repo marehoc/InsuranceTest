@@ -21,7 +21,8 @@ namespace Testing
         [InlineData(40, 40, 20, 50)]
         [InlineData(20, 20, 20, 50)]
         [InlineData(0, 10, 20, 50)]
-        [InlineData(0, 10, 10, 10)] 
+        [InlineData(0, 10, 10, 10)]
+        [InlineData(0, 11, 10, 0)]
         public void TextCoreCalculation(int expectedResult, int totalLoss, int retention, int limit)
         {
             Assert.True(expectedResult == Calculator.EventCoveredCalculation(totalLoss, retention, limit));
