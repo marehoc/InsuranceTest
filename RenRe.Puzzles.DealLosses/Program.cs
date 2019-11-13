@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RenRe.Puzzles.DealLosses.DbLayer;
 
 namespace RenRe.Puzzles.DealLosses
 {
@@ -13,14 +14,14 @@ namespace RenRe.Puzzles.DealLosses
             string input = Console.ReadLine();
 
             if (input.Equals("R", StringComparison.InvariantCultureIgnoreCase))
-                FinalOutput();
+                RunCalculationAndReport();
 
             Console.WriteLine("Press enter to terminate...");
             Console.ReadLine();
             Environment.Exit(0);
         }
 
-        private static void FinalOutput()
+        private static void RunCalculationAndReport()
         {
             
             List<Event> events = MidTier.EventList();

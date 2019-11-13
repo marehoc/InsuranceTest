@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace RenRe.Puzzles.DealLosses
+namespace RenRe.Puzzles.DealLosses.DbLayer
 {
     /// <summary>
     /// Conceptually this can be considered as data retrieved from an a database, filesystem or API
@@ -22,7 +23,17 @@ namespace RenRe.Puzzles.DealLosses
             new Deal(3, 250, 250, new[] { 1, 3 }, new[] { 2, 3 })   //Deal 3 covers Florida and Louisiana for both hurricane and flood and is 250x250
         };
 
+        public static List<enPeril> GetPerilsfromIntArray(int[] perils)
+        {
+            var perilsIntList = perils.OfType<int>().ToList();
+            return perilsIntList.Select(i => (enPeril)i).ToList();
+        }
 
+        public static List<enLocation> GetLocationsfromIntArray(int[] locations)
+        {
+            var locationsIntList = locations.OfType<int>().ToList();
+            return locationsIntList.Select(i => (enLocation)i).ToList();
+        }
 
     }
 }

@@ -3,48 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace RenRe.Puzzles.DealLosses
+namespace RenRe.Puzzles.DealLosses.DbLayer
 {
-    public class Event
-    {
-        public Event (int id, int p, int l, int tl)
-        {
-            Id = id;
-            Peril = (enPeril)p;
-            Location = (enLocation)l;
-            TotalLoss = tl;
-        }
-
-        public Event(int[] data)
-        {
-            Id = data[0];
-            Peril = (enPeril)data[1];
-            Location = (enLocation)data[2];
-            TotalLoss = data[3];
-        }
-
-        public int Id { get; private set; }
-        public enPeril Peril { get; private set; }
-        public enLocation Location { get; private set; }
-        public int TotalLoss { get; private set; }
-
-        public string Option
-        {
-            get { return Logic.GetOption(Peril, Location); }
-        }
-
-        public override string ToString()
-        {
-            return $"Event {Id}";
-        }
-
-        public  string ToLongString()
-        {
-            return $"Event {Id}: {Peril.ToString()} in {Location.ToString()} with Total Loss={TotalLoss}.";
-        }
-
-    }
-
     public class Deal
     {
         public Deal(int id, int r, int l, int[] perils, int[] locations)
@@ -52,8 +12,8 @@ namespace RenRe.Puzzles.DealLosses
             Id = id;
             Retention = r;
             Limit = l;
-            Perils = Logic.GetPerilsfromIntArray(perils);
-            Locations = Logic.GetLocationsfromIntArray(locations);
+            Perils = Data.GetPerilsfromIntArray(perils);
+            Locations = Data.GetLocationsfromIntArray(locations);
         }
 
         public int Id { get; private set; }
@@ -81,10 +41,15 @@ namespace RenRe.Puzzles.DealLosses
             {
                 foreach (enLocation l in Locations)
                 {
-                    r.Add(Logic.GetOption(p, l));
+                    r.Add(Event.GetOption(p, l));
                 }
             }
             return r;
+        }
+
+        public bool IsEventCovered(Event e)
+        {
+            return CoveredOptions.Contains(e.Option);
         }
 
         private string PerilsAsText()
@@ -107,5 +72,4 @@ namespace RenRe.Puzzles.DealLosses
         }
 
     }
-
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RenRe.Puzzles.DealLosses.DbLayer;
+using RenRe.Puzzles.DealLosses.Logic;
 
 namespace RenRe.Puzzles.DealLosses
 {
@@ -39,7 +41,7 @@ namespace RenRe.Puzzles.DealLosses
             {
                 foreach (Deal d in deals)
                 {
-                    sb.AppendLine(Logic.CalculationAsText(e, d));
+                    sb.AppendLine(CalculationAsText(e, d));
                 }
             }
             sb.AppendLine();
@@ -65,6 +67,16 @@ namespace RenRe.Puzzles.DealLosses
             sb.AppendLine();
 
             return sb.ToString();
+        }
+
+        private static string CalculationAsText(Event e, Deal d)
+        {
+            int ourCost = Calculator.CalculateOurCosts(d.IsEventCovered(e), e.TotalLoss, d.Retention, d.Limit);
+
+            if (ourCost == -1)
+                return $"{d.ToString()} does not cover {e.ToString()}.";
+            else
+                return $"{e.ToString()} for {d.ToString()} costs our insurance company: {ourCost}.";
         }
 
 

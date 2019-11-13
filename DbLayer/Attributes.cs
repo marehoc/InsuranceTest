@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RenRe.Puzzles.DealLosses
+namespace RenRe.Puzzles.DealLosses.DbLayer
 {
+
 public enum enPeril
     {
         hurricane = 1,
@@ -17,7 +18,5 @@ public enum enPeril
         Louisiana = 2,
         Florida = 3
     }
-
-
 
 }
