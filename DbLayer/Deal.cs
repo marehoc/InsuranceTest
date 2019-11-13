@@ -7,13 +7,13 @@ namespace RenRe.Puzzles.DealLosses.DbLayer
 {
     public class Deal
     {
-        public Deal(int id, int r, int l, int[] perils, int[] locations)
+        public Deal(int id, int r, int l, List<enPeril> perils, List<enLocation> locations)
         {
             Id = id;
             Retention = r;
             Limit = l;
-            Perils = Data.GetPerilsfromIntArray(perils);
-            Locations = Data.GetLocationsfromIntArray(locations);
+            Perils = perils;
+            Locations = locations;
         }
 
         public int Id { get; private set; }

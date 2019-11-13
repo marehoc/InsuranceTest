@@ -40,15 +40,17 @@ namespace Testing
         }
 
         [Theory]
-        [InlineData(100, 20, 50)]
-        [InlineData(50, 20, 50)]
-        [InlineData(40, 20, 50)]
-        [InlineData(20, 20, 50)]
-        [InlineData(10, 20, 50)]
-        public void TextCoreCalculation(int totalLoss, int retention, int limit)
+        [InlineData(50, 100, 20, 50)]
+        [InlineData(50, 50, 20, 50)]
+        [InlineData(40, 40, 20, 50)]
+        [InlineData(20, 20, 20, 50)]
+        [InlineData(0, 10, 20, 50)]
+        public void TextCoreCalculation(int expectedResult, int totalLoss, int retention, int limit)
         {
-            Assert.True(40 == Calculator.EventCoveredCalculation(totalLoss, retention, limit));
+            Assert.True(expectedResult == Calculator.EventCoveredCalculation(totalLoss, retention, limit));
         }
+
+        //TODO: TEST FOR ARGUMENT EXCEPTIONS
 
     }
 }
