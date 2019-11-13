@@ -39,5 +39,16 @@ namespace Testing
             Assert.Equal(0, Calculator.EventCoveredCalculation(10, 20, 500));
         }
 
+        [Theory]
+        [InlineData(100, 20, 50)]
+        [InlineData(50, 20, 50)]
+        [InlineData(40, 20, 50)]
+        [InlineData(20, 20, 50)]
+        [InlineData(10, 20, 50)]
+        public void TextCoreCalculation(int totalLoss, int retention, int limit)
+        {
+            Assert.True(40 == Calculator.EventCoveredCalculation(totalLoss, retention, limit));
+        }
+
     }
 }
