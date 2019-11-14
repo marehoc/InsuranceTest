@@ -10,9 +10,6 @@ namespace RenRe.Puzzles.DealLosses.Logic
             if (totalLoss < 0 || retention < 0 || limit < 0)
                 throw new ArgumentException("Negative inputs are not allowed.");
 
-            if (retention > limit)
-                throw new ArgumentException("Retention must be lower than limit.");
-
             if (!eventCovered)
                 return -1;
 
