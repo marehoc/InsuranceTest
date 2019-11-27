@@ -6,6 +6,7 @@ namespace RenRe.Puzzles.DealLosses
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to insurance calculation!");
